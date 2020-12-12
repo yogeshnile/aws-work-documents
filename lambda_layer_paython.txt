@@ -1,0 +1,29 @@
+create a python package on ec2 and save in s3 than create lambda layers
+
+ec2 instance must be give iam role to full access s3
+
+login in ec2 instance
+$ sudo apt-get update
+$ python3 -V
+$ mkdir -p build/python/lib/python3.8/site-packages
+$ sudo apt-get install python3-pip -y
+$ pip3 install <package> -t build/python/lib/python3.8/site-packages/ --system
+$ cd build/
+$ sudo apt-get install zip -y
+$ zip -r <zip name> .
+$ sudo apt-get install awscli -y
+$ aws s3 cp <zip file> s3://<bucket>
+
+close instance
+
+goto s3 bucket and copy the zip file link
+
+goto lambda console click layers
+
+create layer input zip file link selete runtime and create
+
+create lambda funtion and runtime
+attach layers
+
+congratulation......
+

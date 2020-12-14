@@ -1,0 +1,19 @@
+Trigger lambda when ec2 instance launched
+
+create lambda ==>	add permissions
+
+create CloudWatch Events rule	==>	Events, Create rule	==>
+	In Event soucre ==>	Choose Event Pattern ==>
+	Choose Build event pattern to match events by service	==>
+	Choose EC2, EC2 Instance State-change Notification	==>
+	Choose Specific state(s), Running
+In target	==>	choose Add target, Lambda function	==>
+		Choose Configure details	==>	
+		For Rule definition, type a name and description for the rule	==>
+		Create rule.
+
+Launch ec2 Instance
+
+Check Lambda cloudwatch
+
+Done..
